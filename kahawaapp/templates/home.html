@@ -1,0 +1,16 @@
+(% extends 'base.html' % )
+
+
+
+(% block content % )
+<h1>Furahia Kahawa</h1>
+
+<ul>
+    (% for kahawaapp in kahawaapp %)
+         <li>{{  kahawaapp.name}} (${{ kahawaapp.price}}))</li>
+    (% endfor %)
+</ul>
+
+
+
+(% endblock %)
