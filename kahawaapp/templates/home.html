@@ -1,16 +1,21 @@
-(% extends 'base.html' % )
+{% extends 'base.html' %}
+
+{% block content %}
 
 
+<div class="row">
+    {% for kahawaapp in kahawaapp_data %}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ kahawaapp.image.url }}" class="card-img-top" alt="{{ kahawaapp.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ kahawaapp.name }}</h5>
+                    <p class="card-text">${{ kahawaapp.price }}</p>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
 
-(% block content % )
-<h1>Furahia Kahawa</h1>
-
-<ul>
-    (% for kahawaapp in kahawaapp %)
-         <li>{{  kahawaapp.name}} (${{ kahawaapp.price}}))</li>
-    (% endfor %)
-</ul>
-
-
-
-(% endblock %)
+{% endblock %}
