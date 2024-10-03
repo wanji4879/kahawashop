@@ -1,15 +1,9 @@
 from django.db import models
-from django.contrib import admin
-
 
 class Kahawaapp(models.Model):
-    name = models.CharField(max_length=255)
-    price = models.FloatField()
-    quantity = models.PositiveIntegerField()
-    image = models.CharField(max_length=255)
+    name = models.CharField(max_length=100)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    image = models.ImageField(upload_to='coffee_photos/')
 
-    def __str__(self):
-        return self.name
-
-
-  
+    def _str_(self):
+        return self.name 
