@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Kahawaapp
 
 class KahawaappAdmin(admin.ModelAdmin):
-    list_display = ("name","price", "quantity")
+    list_display = ("name","price", "image")
 
 
 
